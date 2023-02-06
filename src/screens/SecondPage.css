@@ -1,0 +1,228 @@
+@font-face {
+    font-family: 'HelveticaNeue';
+    src: url(../../public//fonts/HelveticaNeue.ttc);
+}
+
+*{
+    font-family: 'HelveticaNeue';
+}
+input:focus {
+    outline: none;
+}
+#d-block,#email{
+    display: none;
+}
+.container{
+    width: 100%;
+    display: flex;
+}
+.d-flex{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.form{
+    width: 1098px;
+    padding:0 150px;
+    background-color: #F9F9F9;
+}
+.cv{
+    width: 822px;
+}
+.vector{
+    position: absolute;
+    width: 9.21px;
+    height: 16px;
+    left: 62px;
+    top: 57px;
+}
+.heading{
+    margin-top: 47px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom:1px solid #1A1A1A;
+    padding-bottom:12px ;
+}
+.body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 77px;
+}
+.body :nth-child(1){
+    margin-right: 13px;
+}
+#icon,#icon1,#icon3{
+    display: none;
+}
+
+.oneInput div{
+    display: flex;
+    align-items: center;
+}
+.oneInput h2{
+    display: block;
+    font-size: 16px;
+    line-height: 21px;
+}
+.oneInput span{
+    display:block;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    color: #2E2E2E;
+}
+.oneInput input{
+    width: 371px;
+    height: 48px;
+    margin: 8px 0;
+    border: 1px solid #BCBCBC;
+    padding: 13px 16px;
+    border-radius: 4px;
+}
+#file{
+    display: none;
+}
+.title{
+    display: inline-block;
+    margin-right: 19px;
+    margin-top: 54px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+}
+.aboutme{
+    margin-top: 54px;
+}
+.file{
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    background-color: #0E80BF;
+    padding: 4px 19px 6px;
+    border-radius: 4px;
+}
+.txtArea{
+    width: 100%;
+    height: 103px;
+    padding: 13px 16px;
+    margin-top: 8px;
+    outline: none;
+    resize: none;
+    border:  1px solid #BCBCBC;
+    border-radius: 4px;
+}
+.oneInput1 h2{
+    margin-top: 33px;
+    display: block;
+    font-size: 16px;
+    line-height: 21px;
+}
+.oneInput1 span{
+    display:block;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    color: #2E2E2E;
+}
+.oneInput1 input{
+    width: 100%;
+    height: 48px;
+    margin: 8px 0;
+    border: 1px solid #BCBCBC;
+    padding: 13px 16px;
+    border-radius: 4px;
+}
+.oneInput2 h2{
+    margin-top: 33px;
+    display: block;
+    font-size: 16px;
+    line-height: 21px;
+}
+.oneInput2 span{
+    display:block;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    color: #2E2E2E;
+}
+.oneInput2 input{
+    width: 100%;
+    height: 48px;
+    margin: 8px 0;
+    border: 1px solid #BCBCBC;
+    padding: 13px 16px;
+    border-radius: 4px;
+}
+.btn_link{
+    display: flex;
+    justify-content: flex-end;
+}
+.primarybtn{
+    background-color: #6B40E3;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;  
+    padding: 14px 35px;
+    margin-top: 160px;
+    margin-bottom: 65px;
+}
+.cv{
+    margin: 0 80px 0 75px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 68px;
+}
+.textSection h2{
+    display:inline-block;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 42px;
+    color: #F93B1D;
+}
+.textSection :nth-child(1){
+    margin-right: 20px;
+}
+.cvImg{
+    width: 246px;
+    height: 246px;
+    border-radius: 50%;
+}
+.aboutMe{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #F93B1D;
+    margin:34px 0 15px 0;
+}
+.inputText{
+    display: block;
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000;
+    max-width: 432px;
+    width: 100%;
+}
+.contact{
+    display: flex;
+    margin-top: 17px;
+}
+#icon3{
+    margin-left: 15px;
+}
+#icon3green{
+    position:absolute;
+    margin-right: 14.75px;
+    display: none;
+}
