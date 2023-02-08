@@ -1,0 +1,38 @@
+.field h2{
+    margin-top: 33px;
+    display: block;
+    font-size: 16px;
+    line-height: 21px;
+}
+.input6{
+    width: 371px;
+    height: 48px;
+    margin: 8px 0;
+    border: 1px solid #BCBCBC;
+    padding: 13px 16px;
+    border-radius: 4px;
+}
+hr{
+    margin-top: 58px;
+    margin-bottom: 45px;
+}
+.adExperiience{
+    padding: 14px 20px;
+    color: #fff;
+    background: #62A1EB;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+.primarybtn a{
+    text-decoration: none;
+    color: #fff;
+}
+.margin :nth-child(1){
+    margin-right: 56px;
+}
+#icon1green{
+    position:absolute;
+    margin-right: 20.75px;
+    display: none;
+}

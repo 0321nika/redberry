@@ -18,7 +18,7 @@ input:focus {
 }
 .d-flex{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -175,6 +175,8 @@ input:focus {
     padding: 14px 35px;
     margin-top: 160px;
     margin-bottom: 65px;
+    border: 1px solid #6B40E3;
+    cursor: pointer;
 }
 .cv{
     margin: 0 80px 0 75px;
@@ -214,15 +216,19 @@ input:focus {
     max-width: 432px;
     width: 100%;
 }
-.contact{
+.contact, .num{
     display: flex;
     margin-top: 17px;
 }
 #icon3{
     margin-left: 15px;
+    position: relative;
 }
-#icon3green{
+#icon4, #num{
+    display: none;
+}
+#icon4green, #icon3green, #icon2green, #icon1green{
     position:absolute;
-    margin-right: 14.75px;
+    margin-right: 20.75px;
     display: none;
 }
