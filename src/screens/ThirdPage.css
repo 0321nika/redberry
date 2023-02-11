@@ -12,7 +12,7 @@
     padding: 13px 16px;
     border-radius: 4px;
 }
-hr{
+form hr{
     margin-top: 58px;
     margin-bottom: 45px;
 }
@@ -31,8 +31,52 @@ hr{
 .margin :nth-child(1){
     margin-right: 56px;
 }
-#icon1green{
-    position:absolute;
-    margin-right: 20.75px;
+.cv{
+    display: block;
+}
+
+.cv1 span{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #F93B1D;
+    margin-bottom: 15px;
+}
+.cv1 hr{
+    margin-top: 19px;
+    margin-bottom: 24px;
+}
+#exp{
     display: none;
+    margin-bottom: 15px;
+}
+.expp{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1a1a1a;
+}
+.date{
+    display: flex;
+    margin-top: 7px;
+}
+.date span{
+    color: #919191;
+}
+.date h3{
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #919191;
+}
+.txt{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000;
+    margin-top: 16px;
+    max-width: 662px;
+    width: 100%;
 }

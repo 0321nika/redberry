@@ -7,13 +7,13 @@ export const SecondPage = () => {
   //local storage input1
   const [inputValue, setInputValue] = useState('');
   useEffect(() => {
-    const storedValue = localStorage.getItem("inputValue");
+    const storedValue = sessionStorage.getItem("inputValue");
     if (storedValue) {
       setInputValue(storedValue);
     }
   }, []);
   useEffect(() => {
-    localStorage.setItem("inputValue", inputValue);
+    sessionStorage.setItem("inputValue", inputValue);
   }, [inputValue]);
   const handleInputChange = event => {
     const { value } = event.target;
@@ -29,6 +29,7 @@ export const SecondPage = () => {
       document.getElementById("red").style.color = "red";
       document.getElementById("icon").style.display = "block";
       document.getElementById("icon1green").style.display = "none";
+      
     }
   };
 
@@ -37,14 +38,14 @@ export const SecondPage = () => {
   const [inputValue1, setInputValue1] = useState('');
 
   useEffect(() => {
-    const storedValue = localStorage.getItem("inputValue1");
+    const storedValue = sessionStorage.getItem("inputValue1");
     if (storedValue) {
       setInputValue1(storedValue);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("inputValue1", inputValue1);
+    sessionStorage.setItem("inputValue1", inputValue1);
   }, [inputValue1]);
 
   const handleInputChange1 = event => {
@@ -66,17 +67,18 @@ export const SecondPage = () => {
   };
 
 
+
   const [text, setText] = useState('');
 
   useEffect(() => {
-    const storedValue = localStorage.getItem("text");
+    const storedValue = sessionStorage.getItem("text");
     if (storedValue) {
       setText(storedValue);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("text", text);
+    sessionStorage.setItem("text", text);
   }, [text]);
 
 
@@ -95,14 +97,14 @@ export const SecondPage = () => {
   const [email, setEmail] = useState('');
 
   useEffect(() => {
-    const storedValue = localStorage.getItem("email");
+    const storedValue = sessionStorage.getItem("email");
     if (storedValue) {
       setEmail(storedValue);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("email", email);
+    sessionStorage.setItem("email", email);
   }, [email]);
 
 
@@ -114,7 +116,7 @@ export const SecondPage = () => {
       document.getElementById("icon3").style.display = "none";
       document.getElementById("icon3green").style.display = "block";
       return false
-    }else if(email.length > 0){
+    }else if(email.length > -1){
       document.getElementById("email").style.display = "block";
       document.getElementById("icon3green").style.display = "none";
     }else {
@@ -129,14 +131,14 @@ export const SecondPage = () => {
 
 
   useEffect(() => {
-    const storedValue = localStorage.getItem("image");
+    const storedValue = sessionStorage.getItem("image");
     if (storedValue) {
       setImage(storedValue);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("image", image);
+    sessionStorage.setItem("image", image);
   }, [image]);
 
   const handleImageChange = (event) => {
@@ -146,14 +148,14 @@ export const SecondPage = () => {
   const [value, setValue] = useState('');
 
   useEffect(() => {
-    const storedValue = localStorage.getItem("value");
+    const storedValue = sessionStorage.getItem("value");
     if (storedValue) {
       setValue(storedValue);
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("value", value);
+    sessionStorage.setItem("value", value);
   }, [value]);
 
 
@@ -183,7 +185,7 @@ export const SecondPage = () => {
 
   };
     const handleButtonClick = () => {
-      localStorage.clear();
+      sessionStorage.clear();
   };
 
 
@@ -201,7 +203,6 @@ export const SecondPage = () => {
               <h2 id='red'>სახელი</h2>
               <div className='d-flex'>
                 <input
-                  className='inpu1'
                   id='border'
                   type="text"
                   placeholder={'ანზორ'}
@@ -283,14 +284,14 @@ export const SecondPage = () => {
             <div>
             <h2>{inputValue}</h2>
             <h2>{inputValue1}</h2>
-            </div>
             <div className='contact'><img id='email' src='./images/email.png' alt=''/>{email}</div>
             <div className='num'><img id='num' src='./images/phone.png' alt=''/>{value}</div>
             <h3 className='aboutMe' id='d-block'>ჩემ შესახებ</h3>
             <span className='inputText'>{text}</span>
-          </div>
-          <div className='imgSection'>
+            </div>
+            <div className='imgSection'>
           {image && <img src={image} alt="Uploaded" className='cvImg'/>}
+          </div>
           </div>
         </div>
       </div> 

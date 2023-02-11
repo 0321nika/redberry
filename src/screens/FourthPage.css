@@ -1,0 +1,36 @@
+select{
+    width: 371px;
+    height: 48px;
+    margin: 8px 0;
+    border: 1px solid #BCBCBC;
+    padding: 13px 16px;
+    border-radius: 4px;
+}
+option{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+}
+.cv2 hr{
+    margin-top: 32px;
+    margin-bottom: 26px;
+}
+.cv2 span{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #F93B1D;
+}
+.edu{
+    margin-top:15px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1A1A1A;
+
+}
+#edu{
+    display: none;
+}

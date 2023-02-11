@@ -6,7 +6,10 @@
 *{
     font-family: 'HelveticaNeue';
 }
-input:focus {
+input:focus  {
+    outline: none;
+}
+select:focus  {
     outline: none;
 }
 #d-block,#email{
@@ -184,6 +187,10 @@ input:focus {
     justify-content: space-between;
     margin-top: 68px;
 }
+.textSection{
+    display: flex;
+    justify-content: space-between;
+}
 .textSection h2{
     display:inline-block;
     font-weight: 700;
@@ -221,14 +228,14 @@ input:focus {
     margin-top: 17px;
 }
 #icon3{
-    margin-left: 15px;
+    left: 25px;
     position: relative;
 }
 #icon4, #num{
     display: none;
 }
 #icon4green, #icon3green, #icon2green, #icon1green{
-    position:absolute;
-    margin-right: 20.75px;
+    position:relative;
+    right: 40px;
     display: none;
 }
