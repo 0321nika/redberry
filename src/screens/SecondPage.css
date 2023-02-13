@@ -176,7 +176,7 @@ select:focus  {
     font-size: 16px;
     line-height: 20px;  
     padding: 14px 35px;
-    margin-top: 160px;
+    margin-top: 130px;
     margin-bottom: 65px;
     border: 1px solid #6B40E3;
     cursor: pointer;
@@ -186,6 +186,7 @@ select:focus  {
     display: flex;
     justify-content: space-between;
     margin-top: 68px;
+    position: relative;
 }
 .textSection{
     display: flex;
@@ -238,4 +239,9 @@ select:focus  {
     position:relative;
     right: 40px;
     display: none;
+}
+.logostar{
+    position: absolute;
+    bottom: 0;
+    margin: 44px 0px;
 }

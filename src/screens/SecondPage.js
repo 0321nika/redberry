@@ -188,6 +188,8 @@ export const SecondPage = () => {
       sessionStorage.clear();
   };
 
+  
+
 
 
   return (
@@ -235,7 +237,7 @@ export const SecondPage = () => {
           </div>
           <h2 className='title'>პირადი ფოტოს ატვირთვა</h2>
           <input className='input3' id='file' type="file" onChange={handleImageChange} required></input>
-          <label className='file' htmlFor="file" required>ატვირთვა</label>
+          <label className='file' htmlFor="file">ატვირთვა</label>
           <h2 className='aboutme'>ჩემ შესახებ (არასავალდებულო)</h2>
           <textarea  value={text}
                 onChange={handleChange} className="txtArea input4" id='border2' placeholder='ზოგადი ინფო შენს შესახებ'></textarea>
@@ -293,6 +295,9 @@ export const SecondPage = () => {
           {image && <img src={image} alt="Uploaded" className='cvImg'/>}
           </div>
           </div>
+          <div className='logostar'>
+          <img src='./images/logostar.png' alt='star'/>
+        </div>
         </div>
       </div> 
   )

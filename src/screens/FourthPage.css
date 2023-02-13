@@ -34,3 +34,16 @@ option{
 #edu{
     display: none;
 }
+.desc{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 16px;
+}
+.dateEnd{
+    margin-top:7px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #919191;
+}

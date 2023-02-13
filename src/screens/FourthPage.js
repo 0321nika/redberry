@@ -26,6 +26,9 @@ function FourthPage () {
       setPosts(res.data)
     })
   },[])
+  const handleChange2 = (event) => {
+    setPosts(event.target.value);
+  }
  
 
 
@@ -59,6 +62,102 @@ function FourthPage () {
     }
   };
 
+
+
+  const [DateEnd, setdateEnd] = useState('');
+
+  useEffect(() => {
+    const storedValue = sessionStorage.getItem("DateEnd");
+    if (storedValue) {
+      setdateEnd(storedValue);
+    }
+  }, []);
+
+  useEffect(() => {
+    sessionStorage.setItem("DateEnd", DateEnd);
+  }, [DateEnd]);
+
+  function handleChange5(event) {
+    setdateEnd(event.target.value);
+  }
+
+  const [description, setDescription] = useState('');
+
+  useEffect(() => {
+    const storedValue = sessionStorage.getItem("description");
+    if (storedValue) {
+      setDescription(storedValue);
+    }
+  }, []);
+
+  useEffect(() => {
+    sessionStorage.setItem("description", description);
+  }, [description]);
+
+
+  function handleChange7(event) {
+    setDescription(event.target.value);
+    if (description.length > 0){
+      document.getElementById("border2").style.border = "1px solid green";
+    }
+  }
+
+
+const Input = () => {
+
+  return (
+    <form id="allInputs">
+            <div className='oneInput2'>
+                <h2 id='red'>სასწავლებელი</h2>
+                <div className='d-flex'>
+                <input
+                className='input6'
+                  id='border'
+                  type="text"
+                  placeholder={'სასწავლებელი'}
+                  required
+                />
+                <img id='icon1green' src='./images/success.png' alt="success"/>
+                <img id='icon' src='./images/error.png' alt="eror"/>
+                </div>
+                <span>მინიმუმ 2 სიმბოლო</span>
+            </div>
+            <div className='d-flex margin'>
+            <div className='field'>
+                <h2 id='red4'>ხარისხი</h2>
+                <select>
+                  {posts.map(post => (
+                      <option key={post.id}>
+                          {post.title}
+                      </option>
+                      ))}
+                </select>
+            </div>
+            <div className='field'>
+                <h2 id='red4'>დამთავრების თარიღი თარიღი</h2>
+                <input
+                  name='endDate'
+                  className='input6'
+                  id='border4'
+                  type="date"
+                  required
+                />
+            </div>
+            </div>
+            <h2 className='aboutme'>აღწერა</h2>
+            <textarea name='description' className="txtArea input4" id='border2' placeholder='განათლების აღწერა '></textarea>
+            <hr/>
+            </form>
+
+  )
+};
+
+const [area, setArea] = useState([]);
+
+  const onAddBtnClick = event => {
+    setArea(area.concat(<Input key={area.length} />));
+  };
+
   const handleButtonClick = () => {
     sessionStorage.clear();
 };
@@ -66,7 +165,7 @@ function FourthPage () {
   
     return (
       <div className='container'>
-        <Link to="/" className='icon'  onChange={handleButtonClick}><img className='vector' src='./images/Vector.png' alt='vector'/></Link>
+        <Link to="/" className='icon' onChange={handleButtonClick}><img className='vector' src='./images/Vector.png' alt='vector'/></Link>
           <div className='form'>
           <div className='heading'>
               <h2>სასწავლებელი</h2>
@@ -93,9 +192,9 @@ function FourthPage () {
             <div className='d-flex margin'>
             <div className='field'>
                 <h2 id='red4'>ხარისხი</h2>
-                <select>
+                <select >
                   {posts.map(post => (
-                      <option  key={post.id}>
+                      <option  value={posts}  onChange={handleChange2} key={post.id}>
                           {post.title}
                       </option>
                       ))}
@@ -104,6 +203,8 @@ function FourthPage () {
             <div className='field'>
                 <h2 id='red4'>დამთავრების თარიღი თარიღი</h2>
                 <input
+                  value={DateEnd}
+                  onChange={handleChange5}
                   name='endDate'
                   className='input6'
                   id='border4'
@@ -113,16 +214,18 @@ function FourthPage () {
             </div>
             </div>
             <h2 className='aboutme'>აღწერა</h2>
-            <textarea name='description' className="txtArea input4" id='border2' placeholder='განათლების აღწერა '></textarea>
+            <textarea value={description} onChange={handleChange7} name='description' className="txtArea input4" id='border2' placeholder='განათლების აღწერა '></textarea>
             <hr/>
             </form>
             <div>
+            {area}
             </div>
-            <button className='adExperiience'>სხვა სასწავლებლის დამატება</button>
+            <button className='adExperiience' onClick={onAddBtnClick}>სხვა სასწავლებლის დამატება</button>
             <div className='d-flex'>
             <button className='primarybtn'><Link to="/ThirdPage">უკან</Link></button>
             <button className='primarybtn'><Link to="/FifthPage">დასრულება</Link></button>
             </div>
+
           </div>
           <div className='cv'>
           <div className='textSection'>
@@ -154,7 +257,13 @@ function FourthPage () {
           <hr/>
           <span  id='edu'>განათლება</span>
           <h3 className='edu'>{education}</h3>
+          <h3 className='dateEnd'>{DateEnd}</h3>
+          <h3 className='desc'>{description}</h3>
           
+          
+        </div>
+        <div className='logostar'>
+          <img src='./images/logostar.png' alt='star'/>
         </div>
         </div>
       </div>

@@ -10,9 +10,6 @@ export const ThirdPage = () => {
   var email = sessionStorage.getItem("email");
   var img = sessionStorage.getItem("image");
   var value = sessionStorage.getItem("value");
-
-
-
   
   const [experience, setExperience] = useState('');
 
@@ -72,7 +69,7 @@ export const ThirdPage = () => {
   };
 
 
-
+  const [error, setError] = useState("");
   const [date, setDate] = useState('');
 
   useEffect(() => {
@@ -88,8 +85,16 @@ export const ThirdPage = () => {
 
   function handleChange4(event) {
     setDate(event.target.value);
-
+    setError("");
   }
+  const handleBlur = (event) => {
+    const enteredDate = new Date(event.target.value);
+    const isValid = !isNaN(enteredDate.getTime());
+
+    if (!isValid) {
+      setError("Invalid date format");
+    }
+  };
 
 
   const [dateEnd, setDateEnd] = useState('');
@@ -139,6 +144,78 @@ export const ThirdPage = () => {
   const handleButtonClick = () => {
     sessionStorage.clear();
 };
+const Input = () => {
+
+  return (
+    <form id="allInputs">
+          <div className='oneInput2'>
+              <h2 id='red'>თანამდებობა</h2>
+              <div className='d-flex'>
+              <input
+              className='input1'
+                id='border5'
+                type="text"
+                placeholder={'დეველოპერი,დიზაინერი ა.შ'}
+                required
+              />
+              <img id='icon1green' src='./images/success.png' alt="success"/>
+              <img id='icon1' src='./images/error.png' alt="eror"/>
+              </div>
+              <span>მინიმუმ 2 სიმბოლო</span>
+          </div>
+          <div className='oneInput2'>
+              <h2 id='red4'>დამსაქმებელი</h2>
+              <div className='d-flex'>
+              <input
+                id='border4'
+                type="text"
+                placeholder={'დამსაქმებელი'}
+                required
+              />
+              <img id='icon4green' src='./images/success.png' alt="success"/>
+              <img id='icon4' src='./images/error.png' alt="eror"/>
+              </div>
+              <span>მინიმუმ 2 სიმბოლო</span>
+          </div>
+          <div className='d-flex margin'>
+          <div className='field'>
+              <h2 id='red4'>დაწყების თარიღი</h2>
+              <input
+                name='startDate'
+                className='input6'
+                id='border5'
+                type="date"
+                required
+              />
+          </div>
+          <div className='field'>
+              <h2 id='red4'>დამთავრების თარიღი თარიღი</h2>
+              <input
+                name='endDate'
+                className='input6'
+                id='border4'
+                type="date"
+                required
+              />
+          </div>
+          </div>
+          <h2 className='aboutme'>აღწერა</h2>
+          <textarea 
+            className="txtArea"
+            id='border2'
+            placeholder='როლი თანამდებობაზე და ზოგადი აღწერა'>
+            </textarea>
+          <hr/>
+          </form>
+
+  )
+};
+
+const [area1, setArea1] = useState([]);
+
+  const onAddBtnClick1 = event => {
+    setArea1(area1.concat(<Input key={area1.length} />));
+  };
   return (
     <div className='container'>
       <Link to="/" onChange={handleButtonClick} className='icon'><img className='vector' src='./images/Vector.png' alt='vector'/></Link>
@@ -192,9 +269,11 @@ export const ThirdPage = () => {
                 id='border5'
                 value={date} 
                 onChange={handleChange4}
+                onBlur={handleBlur} 
                 type="date"
                 required
               />
+               {error && <p>{error}</p>}
           </div>
           <div className='field'>
               <h2 id='red4'>დამთავრების თარიღი თარიღი</h2>
@@ -220,9 +299,10 @@ export const ThirdPage = () => {
           <hr/>
           </form>
     </div>
+    {area1}
           <div>
           </div>
-          <button className='adExperiience'>მეტი გამოცდილების დამატება</button>
+          <button className='adExperiience'  onClick={onAddBtnClick1}>მეტი გამოცდილების დამატება</button>
           <div className='d-flex'>
             <button className='primarybtn'><Link to="/SecondPage">უკან</Link></button>
             <button className='primarybtn'><Link to="/FourthPage">შემდეგი</Link></button>
@@ -253,6 +333,9 @@ export const ThirdPage = () => {
           </div>
           <h2 className='txt'>{txt}</h2>
 
+        </div>
+        <div className='logostar'>
+          <img src='./images/logostar.png' alt='star'/>
         </div>
         </div>
     </div>
